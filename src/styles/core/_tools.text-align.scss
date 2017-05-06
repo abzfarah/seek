@@ -1,0 +1,21 @@
+@mixin text-align {
+  &--align-start {
+    text-align: left;
+
+    html.rtl & {
+      text-align: right;
+    }
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-end {
+    text-align: right;
+
+    html.rtl & {
+      text-align: left;
+    }
+  }
+}

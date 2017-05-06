@@ -1,0 +1,36 @@
+.seek {
+  @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
+
+  h1:not(.#{$namespace}heading) {
+    @include h1();
+  }
+
+  h2:not(.#{$namespace}heading) {
+    @include h2();
+  }
+
+  h3:not(.#{$namespace}heading) {
+    @include h3();
+  }
+
+  h4:not(.#{$namespace}heading) {
+    @include h4();
+  }
+
+  h5:not(.#{$namespace}heading) {
+    @include h5();
+  }
+
+  h6:not(.#{$namespace}heading) {
+    @include h6();
+  }
+
+  h1:not(.#{$namespace}heading),
+  h2:not(.#{$namespace}heading),
+  h3:not(.#{$namespace}heading),
+  h4:not(.#{$namespace}heading),
+  h5:not(.#{$namespace}heading),
+  h6:not(.#{$namespace}heading) {
+    @include heading();
+  }
+}

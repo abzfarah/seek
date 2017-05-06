@@ -1,6 +1,6 @@
 .DS_STORE
 *.log
-.config.codekit
+config.codekit
 node_modules
 
 dist
