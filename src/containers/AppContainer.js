@@ -29,7 +29,11 @@ class AppContainer extends React.Component {
 
           <div className="seek-product--container">
 
-            <CustomerPanel action={this.changeCustomer} />
+            <CustomerPanel
+              action={this.changeCustomer}
+              currentCustomer={this.state.currentCustomer}
+
+            />
 
             <ProductMenu/>
           </div>

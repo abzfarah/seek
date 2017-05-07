@@ -725,29 +725,81 @@ ul, ol, dd {
       position: absolute;
       left: 0;
       line-height: 70px; }
-    .seek-button--customer:after {
+    .seek-button--customer--default:focus {
+      background: #aaa;
+      -webkit-transform-origin: 50% 100%;
+      -webkit-transform: rotateX(-90deg) translateY(100%); }
+    .seek-button--customer--default:after {
       top: -98%;
       /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
       background: #7aca7c;
       color: #358337;
-      content: 'It worked!';
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(https://cdn3.iconfinder.com/data/icons/simplius-pack/512/personal-512.png);
       -webkit-transform-origin: 0% 100%;
       -webkit-transform: rotateX(90deg); }
-    .seek-button--customer:before {
-      top: 100%;
-      background: #e96a6a;
-      color: #a33a3a;
-      content: 'Error!';
-      font-weight: 700;
-      font-family: 'Lato', Calibri, Arial, sans-serif;
-      -webkit-transform-origin: 0% 0%;
-      -webkit-transform: rotateX(-90deg); }
-    .seek-button--customer:active {
-      background: #fff; }
-    .seek-button--customer:focus {
+    .seek-button--customer--nike:focus {
       background: #aaa;
       -webkit-transform-origin: 50% 100%;
       -webkit-transform: rotateX(-90deg) translateY(100%); }
+    .seek-button--customer--nike:after {
+      top: -98%;
+      /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
+      background: #7aca7c;
+      color: #358337;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1000px-Logo_NIKE.svg.png);
+      -webkit-transform-origin: 0% 100%;
+      -webkit-transform: rotateX(90deg); }
+    .seek-button--customer--unilever:focus {
+      background: #aaa;
+      -webkit-transform-origin: 50% 100%;
+      -webkit-transform: rotateX(-90deg) translateY(100%); }
+    .seek-button--customer--unilever:after {
+      top: -98%;
+      /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
+      background: #7aca7c;
+      color: #358337;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(https://www.roccacreative.co.uk/Media/Default/Images/Clients/unilever-logo.png);
+      -webkit-transform-origin: 0% 100%;
+      -webkit-transform: rotateX(90deg); }
+    .seek-button--customer--ford:focus {
+      background: #aaa;
+      -webkit-transform-origin: 50% 100%;
+      -webkit-transform: rotateX(-90deg) translateY(100%); }
+    .seek-button--customer--ford:after {
+      top: -98%;
+      /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
+      background: #7aca7c;
+      color: #358337;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(http://www.iconsdb.com/icons/preview/black/ford-xxl.png);
+      -webkit-transform-origin: 0% 100%;
+      -webkit-transform: rotateX(90deg); }
+    .seek-button--customer--apple:focus {
+      background: #aaa;
+      -webkit-transform-origin: 50% 100%;
+      -webkit-transform: rotateX(-90deg) translateY(100%); }
+    .seek-button--customer--apple:after {
+      top: -98%;
+      /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
+      background: #7aca7c;
+      color: #358337;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url(http://diylogodesigns.com/blog/wp-content/uploads/2016/04/Apple-Logo-black-png-transparent.png);
+      -webkit-transform-origin: 0% 100%;
+      -webkit-transform: rotateX(90deg); }
 
 .seek-button--plain {
   width: auto;

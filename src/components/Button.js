@@ -15,15 +15,15 @@ export default class Button extends Component {
     this._onBlur = this._onBlur.bind(this);
     this.state = {
       mouseActive: false,
-      focus: false
+      focus: false,
+      currentCustomer: 0
     };
   }
 
   _onClick (event) {
-    const { method, onClick, path} = this.props;
+    const { method, onClick, path, index} = this.props;
 
     event.preventDefault();
-
 
     if (onClick) {
       onClick(...arguments);
@@ -65,11 +65,20 @@ export default class Button extends Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    if ( nextProps.index !== this.state.currentCustomer ) {
+      this.setState({
+        currentCustomer: nextProps.index
+      })
+    }
+    debugger
+  }
+
   render () {
 
     const {
      children, className,
-      label, onClick, customer, cart
+      label, onClick, customer, cart, index
     } = this.props;
 
     let buttonLabel;
@@ -84,12 +93,20 @@ export default class Button extends Component {
         [`${CLASS_ROOT}--focus`]: this.state.focus,
         [`${CLASS_ROOT}--customer`]: true,
         [`${CLASS_ROOT}--cart`]: false,
+        [`${CLASS_ROOT}--customer--default`]: this.props.index == 0 ? true : false,
+        [`${CLASS_ROOT}--customer--nike`]: this.props.index == 1 ? true : false,
+        [`${CLASS_ROOT}--customer--unilever`]: this.props.index == 2 ? true : false,
+        [`${CLASS_ROOT}--customer--ford`]: this.props.index == 3 ? true : false,
+        [`${CLASS_ROOT}--customer--apple`]: this.props.index == 4 ? true : false,
+
       },
       className
     );
 
     return (
       <button
+
+           onClick={this._onClick}
            className={classes}
            onMouseDown={this._onMouseDown}
            onMouseUp={this._onMouseUp}
@@ -108,3 +125,6 @@ Button.propTypes = {
   cart: PropTypes.bool
 };
 
+Button.defaultProps = {
+  index: 0
+};
