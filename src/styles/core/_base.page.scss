@@ -2,6 +2,7 @@
   // inuit-box-sizing sets in on the 'html' element, we only want it here
   box-sizing: border-box;
 
+
   // From inuit-page
   //
   // High-, page-level styling.
@@ -18,7 +19,7 @@
 
   font-size: ($inuit-base-font-size / 16px) * 1em;
   line-height: $inuit-base-line-height / $inuit-base-font-size;
-  background-color: $background-color;
+  background-color: #0e83cd;
   color: $text-color;
   // overflow-y: scroll; // [2]
   // min-height: 100%;   // [3]

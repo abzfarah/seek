@@ -2,7 +2,7 @@
 *.log
 config.codekit
 node_modules
-
+src/styles/.sass-cache
 dist
 coverage
 
