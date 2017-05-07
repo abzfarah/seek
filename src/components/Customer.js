@@ -7,25 +7,17 @@ class Customer extends React.Component {
     super(props);
     this.state = {}
   }
-  closeCart() {
-  }
-
-  openCart() {
-  }
-
-  removeFromCart() {
-  }
 
 
   render() {
 
     return (
       <div className="list">
-        <button className="btn btn-8 btn-8g">Default</button>
-        <button className="btn btn-8 btn-8g">Nike</button>
-        <button className="btn btn-8 btn-8g">Unilever</button>
-        <button className="btn btn-8 btn-8g">Ford</button>
-        <button className="btn btn-8 btn-8g">Apple</button>
+        <button onClick={()=>this.props.action(0)} className="btn btn-8 btn-8g">Default</button>
+        <button onClick={()=>this.props.action(1)} className="btn btn-8 btn-8g">Nike</button>
+        <button onClick={()=>this.props.action(2)} className="btn btn-8 btn-8g">Unilever</button>
+        <button onClick={()=>this.props.action(3)} className="btn btn-8 btn-8g">Ford</button>
+        <button onClick={()=>this.props.action(4)} className="btn btn-8 btn-8g">Apple</button>
       </div>
     );
   }
