@@ -563,6 +563,12 @@ ul, ol, dd {
   position: absolute;
   opacity: 0; }
 
+.product-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+
 .seek input[type="button"],
 .seek input[type="submit"],
 .seek button:not(.seek-button) {
@@ -681,7 +687,8 @@ ul, ol, dd {
   /* FF jagged edges fix */
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+  line-height: 5px !important; }
   .btn-8:active {
     background: #55b7f3; }
   .btn-8:after {
