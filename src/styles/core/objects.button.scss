@@ -206,7 +206,7 @@ $button-horizontal-padding:
       background: #fff;
     }
 
-    &:hover {
+    &:focus {
       background: #aaa;
       -webkit-transform-origin: 50% 100%;
       -webkit-transform: rotateX(-90deg) translateY(100%);

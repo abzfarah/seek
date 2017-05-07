@@ -744,7 +744,7 @@ ul, ol, dd {
       -webkit-transform: rotateX(-90deg); }
     .seek-button--customer:active {
       background: #fff; }
-    .seek-button--customer:hover {
+    .seek-button--customer:focus {
       background: #aaa;
       -webkit-transform-origin: 50% 100%;
       -webkit-transform: rotateX(-90deg) translateY(100%); }

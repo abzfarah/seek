@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/Button'
 import classnames from 'classnames'
 import CSSClassnames from '../utils/CSSClassnames';
 
@@ -27,11 +28,11 @@ class CustomerPanel extends React.Component {
 
     return (
       <div className="list">
-        <button onClick={()=>this.props.action(0)} className={buttonClass}>Default</button>
-        <button onClick={()=>this.props.action(1)} className={buttonClass}>Nike</button>
-        <button onClick={()=>this.props.action(2)} className={buttonClass}>Unilever</button>
-        <button onClick={()=>this.props.action(3)} className={buttonClass}>Ford</button>
-        <button onClick={()=>this.props.action(4)} className={buttonClass}>Apple</button>
+        <Button onClick={()=>this.props.action(0)} className={buttonClass} label='Default'/>
+        <Button onClick={()=>this.props.action(1)} className={buttonClass} label='Nike'/>
+        <Button onClick={()=>this.props.action(2)} className={buttonClass} label='Unilever'/>
+        <Button onClick={()=>this.props.action(3)} className={buttonClass} label='Ford'/>
+        <Button onClick={()=>this.props.action(4)} className={buttonClass} label='Apple'/>
       </div>
     );
   }
