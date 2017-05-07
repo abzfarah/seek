@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux'
+import CartReducer from './CartReducer'
+
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
+
     ...asyncReducers
   })
 }

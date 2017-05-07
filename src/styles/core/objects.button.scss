@@ -22,7 +22,6 @@ $button-horizontal-padding:
 
 }
 
-
 .product-container {
   display: -webkit-flex;
   display: flex;
@@ -100,107 +99,124 @@ $button-horizontal-padding:
 
   }
 
+  &--cart {
+       display: inline-block;
+       margin-bottom: 0;
+       font-weight: 500;
+       text-align: center;
+       vertical-align: middle;
+       -ms-touch-action: manipulation;
+       touch-action: manipulation;
+       cursor: pointer;
+       background-image: none;
+       white-space: nowrap;
+       padding: 5px 1px;
+       font-size: 15px;
+       line-height: 1.5;
+       border-radius: 3px;
+       -webkit-user-select: none;
+       -moz-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+       transition: background-color .2s ease;
+       text-transform: uppercase;
+       letter-spacing: 1px;
+       background-color: transparent;
+       color: rgba(0,0,0,.86);
+       margin-top: 81px;
+
+       > span {
+         margin-left: 1em;
+         font-size: 13px !important;
+         margin-top: 43px;
+         margin-right: 7px;
+       }
+
+     }
 
 
-}
-
-.btn {
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  background: none;
-  cursor: pointer;
-  padding: 25px 80px;
-  display: inline-block;
-  margin: 15px 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  outline: none;
-  position: relative;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: -1;
+  &--customer {
+    display: block;
+    background: #5cbcf6;
+    outline: 1px solid transparent; /* FF jagged edges fix */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    line-height: 5px !important;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+
+    background-color: rgb(232, 232, 232) !important;
+    color: #999;
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+
+    &:after, &:before {
+      text-transform: uppercase;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      line-height: 70px;
+    }
+
+    &:after {
+      top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
+      background: #7aca7c;
+      color: #358337;
+      content: 'It worked!';
+      -webkit-transform-origin: 0% 100%;
+      -webkit-transform: rotateX(90deg);
+    }
+
+    &:before {
+      top: 100%;
+      background: #e96a6a;
+      color: #a33a3a;
+      content: 'Error!';
+      font-weight: 700;
+      font-family: 'Lato', Calibri, Arial, sans-serif;
+      -webkit-transform-origin: 0% 0%;
+      -webkit-transform: rotateX(-90deg);
+    }
+
+    &:active {
+      background: #fff;
+    }
+
+    &:hover {
+      background: #aaa;
+      -webkit-transform-origin: 50% 100%;
+      -webkit-transform: rotateX(-90deg) translateY(100%);
+    }
+
+
   }
 
 
-}
 
-
-.btn-8 {
-  display: block;
-  background: #5cbcf6;
-  outline: 1px solid transparent; /* FF jagged edges fix */
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  line-height: 5px !important;
-
-  &:active {
-    background: #55b7f3;
-  }
-
-
-  &:after {
-    background: #55b7f3;
-
-  }
-
-
-
-}
-
-.btn-8g {
-  background-color: rgb(232, 232, 232) !important;
-  color: #999;
-
-  &:after, &:before {
-    text-transform: uppercase;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    line-height: 70px;
-  }
-
-  &:after {
-    top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
-    background: #7aca7c;
-    color: #358337;
-    content: 'It worked!';
-    -webkit-transform-origin: 0% 100%;
-    -webkit-transform: rotateX(90deg);
-  }
-
-  &:before {
-    top: 100%;
-    background: #e96a6a;
-    color: #a33a3a;
-    content: 'Error!';
-    font-weight: 700;
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    -webkit-transform-origin: 0% 0%;
-    -webkit-transform: rotateX(-90deg);
-  }
-
-  &:active {
-    background: #fff;
-  }
-
-  &.btn-success3d {
-    background: #aaa;
-    -webkit-transform-origin: 50% 100%;
-    -webkit-transform: rotateX(-90deg) translateY(100%);
-  }
 }
 
 

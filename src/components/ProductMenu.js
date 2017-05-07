@@ -1,23 +1,25 @@
 import React from 'react'
+import classnames from 'classnames'
+import CSSClassnames from '../utils/CSSClassnames';
 
+const CLASS_ROOT = CSSClassnames.BUTTON;
 
-class Product extends React.Component {
+class ProductMenu extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {}
   }
-  closeCart() {
-  }
-
-  openCart() {
-  }
-
-  removeFromCart() {
-  }
-
 
   render() {
+
+    const classes = classnames(
+      CLASS_ROOT,
+      {
+        [`${CLASS_ROOT}--focus`]: this.state.focus,
+        [`btn-success3d`]: true
+      }
+    );
 
     return (
       <div className="product-container">
@@ -60,4 +62,4 @@ class Product extends React.Component {
 };
 
 
-export default Product;
+export default ProductMenu;

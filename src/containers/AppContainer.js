@@ -1,6 +1,6 @@
 import React from 'react'
-import Customer from '../components/Customer'
-import Product from '../components/Product'
+import CustomerPanel from '../components/CustomerPanel'
+import ProductMenu from '../components/ProductMenu'
 
 import '../styles/core.scss'
 
@@ -29,9 +29,9 @@ class AppContainer extends React.Component {
 
           <div className="seek-product--container">
 
-            <Customer action={this.changeCustomer} />
+            <CustomerPanel action={this.changeCustomer} />
 
-            <Product/>
+            <ProductMenu/>
           </div>
 
         </div>
