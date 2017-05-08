@@ -28,21 +28,24 @@ export const CUSTOMER_ENUM = {
 };
 
 export const DEFAULT_CART = {
-    CLASSIC: {
-      quantity: 0,
-      bonus: 0,
-      price: 269.99
+    products: {
+      CLASSIC: {
+        quantity: 0,
+        bonus: 0,
+        price: 269.99
+      },
+      STANDOUT: {
+        quantity: 0,
+        bonus: 0,
+        price: 322.99
+      },
+      PREMIUM: {
+        quantity: 0,
+        bonus: 0,
+        price: 394.99
+      },
     },
-    STANDOUT: {
-      quantity: 0,
-      bonus: 0,
-      price: 322.99
-    },
-    PREMIUM: {
-      quantity: 0,
-      bonus: 0,
-      price: 394.99
-    },
+    unique: 0,
     total: 0
 }
 

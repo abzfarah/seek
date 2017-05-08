@@ -13,7 +13,6 @@ $button-horizontal-padding:
   cursor: pointer;
   text-align: center;
   outline: none;
-  min-width: $button-min-width;
   max-width: $button-max-width;
 
   @include media-query(lap-and-up) {
@@ -37,8 +36,7 @@ $button-horizontal-padding:
     @include basic-button();
 
     &:focus {
-      border-color: $focus-border-color;
-      box-shadow: 0 0 1px 1px $focus-border-color;
+
     }
 
     &:active {
@@ -60,8 +58,24 @@ $button-horizontal-padding:
   @include basic-button();
 
   &--focus {
-    border: $button-border-width solid $focus-border-color;
-    box-shadow: 0 0 1px 1px $focus-border-color;
+
+
+  }
+  &--close-cart {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: auto;
+    margin: 0;
+    padding: 0 5px 3px;
+    color: white !important;
+    background: #2c3e50 !important;
+    box-shadow: none;
+    min-width: 36px;
+  }
+
+  &--remove-item {
+    background: #e74c3c;
   }
 
   &--cart {
@@ -89,6 +103,8 @@ $button-horizontal-padding:
     background-color: transparent;
     color: rgba(0,0,0,.86);
     margin-top: 81px;
+
+
 
     > span {
       margin-left: 1em;
@@ -212,7 +228,7 @@ $button-horizontal-padding:
       }
       &:after {
         top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
-        background: #7aca7c;
+        background: #ffffff;
         color: #358337;
         background-repeat: no-repeat;
         background-size: contain;
@@ -233,7 +249,7 @@ $button-horizontal-padding:
       }
       &:after {
         top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
-        background: #7aca7c;
+        background: #ffffff;
         color: #358337;
         background-repeat: no-repeat;
         background-size: contain;
@@ -254,7 +270,7 @@ $button-horizontal-padding:
       }
       &:after {
         top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
-        background: #7aca7c;
+        background: #ffffff;
         color: #358337;
         background-repeat: no-repeat;
         background-size: contain;
@@ -275,7 +291,7 @@ $button-horizontal-padding:
       }
       &:after {
         top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
-        background: #7aca7c;
+        background: #ffffff;
         color: #358337;
         background-repeat: no-repeat;
         background-size: contain;

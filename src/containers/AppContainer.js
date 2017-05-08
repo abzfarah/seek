@@ -1,6 +1,7 @@
 import React from 'react'
 import CustomerPanel from '../components/CustomerPanel'
 import ProductMenu from '../components/ProductMenu'
+import Cart from '../components/Cart'
 import { CUSTOMER, PRODUCT, PRODUCT_ENUM, CUSTOMER_ENUM, DEFAULT_CART } from '../utils/constants'
 import '../styles/core.scss'
 
@@ -10,22 +11,32 @@ class AppContainer extends React.Component {
     super(props);
     this.state = {
       currentCustomer: 0,
+      cartVisible: false,
       cart: {
-        CLASSIC: {
-          quantity: 0,
-          bonus: 0,
-          price: 269.99
+        products: {
+          CLASSIC: {
+            id: 0,
+            name: "Classic Ad",
+            quantity: 0,
+            bonus: 0,
+            price: 269.99
+          },
+          STANDOUT: {
+            id: 1,
+            name: "Standout Ad",
+            quantity: 0,
+            bonus: 0,
+            price: 322.99
+          },
+          PREMIUM: {
+            id: 2,
+            name: "Premium Ad",
+            quantity: 0,
+            bonus: 0,
+            price: 394.99
+          },
         },
-        STANDOUT: {
-          quantity: 0,
-          bonus: 0,
-          price: 322.99
-        },
-        PREMIUM: {
-          quantity: 0,
-          bonus: 0,
-          price: 394.99
-        },
+        unique: 0,
         total: 0
       }
     }
@@ -50,10 +61,13 @@ class AppContainer extends React.Component {
 
   addToCart(sku) {
     let cart = this.state.cart
-    cart[PRODUCT_ENUM[sku]].quantity += 1
+    cart.products[PRODUCT_ENUM[sku]].quantity += 1
 
     this._processCart(sku)
-    this.setState({ cart })
+    this.setState({
+      cart,
+      cartVisible: true
+    })
   }
 
 
@@ -64,26 +78,28 @@ class AppContainer extends React.Component {
     switch ( currentCustomer ) {
 
       case CUSTOMER.UNILEVER:
-        cart[PRODUCT_ENUM[sku]].bonus = Math.floor(cart[PRODUCT_ENUM[sku]].quantity/2)
+
+
+        cart.products[PRODUCT_ENUM[sku]].bonus = Math.floor(cart.products[PRODUCT_ENUM[sku]].quantity/2)
         break
 
       case CUSTOMER.APPLE:
 
-        cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].price = 299.99
+        cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]].price = 299.99
         break
 
       case CUSTOMER.NIKE:
-        cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price =
-          cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity >= 4 ? 379.99 : cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price
+        cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].price =
+          cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity >= 4 ? 379.99 : cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].price
         break
 
       case CUSTOMER.FORD:
-        cart[PRODUCT_ENUM[sku]].bonus = Math.floor(cart[PRODUCT_ENUM[sku]].quantity/4)
+        cart.products[PRODUCT_ENUM[sku]].bonus = Math.floor(cart.products[PRODUCT_ENUM[sku]].quantity/4)
 
-        cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].price = 309.99
+        cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]].price = 309.99
 
-        cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price =
-          cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity >= 3 ? 389.99 : cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price
+        cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].price =
+          cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity >= 3 ? 389.99 : cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].price
         break
     }
 
@@ -95,7 +111,9 @@ class AppContainer extends React.Component {
     let total=0
 
     for (let product in PRODUCT) {
-      total += (cart[product].quantity-cart[product].bonus)*cart[product].price
+
+      var x = cart.products[product].quantity
+      total += (cart.products[product].quantity - cart.products[product].bonus)*cart.products[product].price
     }
 
     console.log(total)
@@ -125,9 +143,10 @@ class AppContainer extends React.Component {
     let { cart } = this.state
 
     for (let product in PRODUCT) {
-      cart[product].quantity=0;
-      cart[product].bonus=0;
-      cart[product].price=DEFAULT_CART[product].price;
+      cart.products[product].quantity=0;
+      cart.products[product].bonus=0;
+      cart.products[product].unique=0;
+      cart.products[product].price=DEFAULT_CART.products[product].price;
     }
 
     cart.total = 0
@@ -138,7 +157,7 @@ class AppContainer extends React.Component {
 
   render () {
 
-    const { currentCustomer, cart } = this.state
+    const { currentCustomer, cart, cartVisible } = this.state
 
     return (
         <div className="seek">
@@ -156,6 +175,11 @@ class AppContainer extends React.Component {
               cart={cart}
               currentCustomer={currentCustomer}
             />
+
+            <Cart
+              cart={cart}
+              visible={cartVisible}
+            />
           </div>
 
           <div>
@@ -163,19 +187,19 @@ class AppContainer extends React.Component {
 
             Current Customer: {CUSTOMER_ENUM[currentCustomer]}
 
-            <div>Classic Ads Quantity: {cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].quantity}</div>
-            <div>Classic Ads Bonus: {cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].bonus}</div>
-            <div>Classic Ads Price: {cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].price}</div>
+            <div>Classic Ads Quantity: {cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].quantity}</div>
+            <div>Classic Ads Bonus: {cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].bonus}</div>
+            <div>Classic Ads Price: {cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].price}</div>
             <br/>
-            <div>Standout Ads Quantity: {cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].quantity}</div>
-            <div>Standout Ads Bonus: {cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].bonus}</div>
-            <div>Standout Ads Price: {cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].price}</div>
+            <div>Standout Ads Quantity: {cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]].quantity}</div>
+            <div>Standout Ads Bonus: {cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]].bonus}</div>
+            <div>Standout Ads Price: {cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]].price}</div>
             <br/>
-            <div>Premium Ads Quantity: {cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity}</div>
-            <div>Premium Ads Bonus: {cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].bonus}</div>
-            <div>Premium Ads Price: {cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price}</div>
+            <div>Premium Ads Quantity: {cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity}</div>
+            <div>Premium Ads Bonus: {cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].bonus}</div>
+            <div>Premium Ads Price: {cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].price}</div>
             <br/>
-            Total: {cart.total}
+            Total: {cart.products.total}
           </div>
 
         </div>

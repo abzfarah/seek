@@ -17,7 +17,7 @@ class ProductMenu extends React.Component {
 
     const { cart } = this.props
 
-    let classicAdPrice, standoutAdPrice, premiumAdPrice
+    let classicAd, standoutAd, premiumAd
 
     const classes = classnames(
       CLASS_ROOT,
@@ -27,9 +27,9 @@ class ProductMenu extends React.Component {
       }
     );
 
-    classicAdPrice = cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].price
-    standoutAdPrice = cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].price
-    premiumAdPrice = cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price
+    classicAd = cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]]
+    standoutAd = cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]]
+    premiumAd = cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]]
 
 
     return (
@@ -37,7 +37,8 @@ class ProductMenu extends React.Component {
         <div className="seek-product">
           <div className="seek-product__info">
             <h3 className="seek-product__title">Classic Ad</h3>
-            <span className="seek-product__price hghlight">{classicAdPrice}</span>
+            <span className="seek-product__price hghlight">{classicAd.price}</span>
+
 
             <Button
               onClick={()=>this.props.add(PRODUCT.CLASSIC)}
@@ -55,7 +56,7 @@ class ProductMenu extends React.Component {
         <div className="seek-product">
           <div className="seek-product__info">
             <h3 className="seek-product__title">Standout Ad</h3>
-            <span className="seek-product__price highlight">{standoutAdPrice}</span>
+            <span className="seek-product__price highlight">{standoutAd.price}</span>
 
             <Button
               onClick={()=>this.props.add(PRODUCT.STANDOUT)}
@@ -73,7 +74,7 @@ class ProductMenu extends React.Component {
         <div className="seek-product">
           <div className="seek-product__info">
             <h3 className="seek-product__title">Premium Ad</h3>
-            <span className="seek-product__price highlight">{premiumAdPrice}</span>
+            <span className="seek-product__price highlight">{premiumAd.price}</span>
 
             <Button
               onClick={()=>this.props.add(PRODUCT.PREMIUM)}
