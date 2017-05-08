@@ -80,7 +80,7 @@ class AppContainer extends React.Component {
       case CUSTOMER.UNILEVER:
 
 
-        cart.products[PRODUCT_ENUM[sku]].bonus = Math.floor(cart.products[PRODUCT_ENUM[sku]].quantity/2)
+        cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].bonus = Math.floor(cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].quantity/2)
         break
 
       case CUSTOMER.APPLE:
@@ -94,7 +94,7 @@ class AppContainer extends React.Component {
         break
 
       case CUSTOMER.FORD:
-        cart.products[PRODUCT_ENUM[sku]].bonus = Math.floor(cart.products[PRODUCT_ENUM[sku]].quantity/4)
+        cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].bonus = Math.floor(cart.products[PRODUCT_ENUM[PRODUCT.CLASSIC]].quantity/4)
 
         cart.products[PRODUCT_ENUM[PRODUCT.STANDOUT]].price = 309.99
 
