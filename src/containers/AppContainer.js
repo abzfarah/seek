@@ -184,6 +184,10 @@ class AppContainer extends React.Component {
           </div>
 
           <div>
+            Remove buttons not implemented. Just click on another customer to reset cart.
+          </div>
+
+          <div>
             Cart Summary:
 
             Current Customer: {CUSTOMER_ENUM[currentCustomer]}
