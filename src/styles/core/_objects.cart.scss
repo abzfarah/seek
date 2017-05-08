@@ -1,0 +1,74 @@
+.list > button {
+  display: flex;
+}
+
+.list {
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.#{$namespace}product {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  /* min-width: 6em; */
+  padding: 3.5em 1.5em 2em;
+  /* padding: 54px; */
+  background: rgb(232, 232, 232);
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  margin: 0 1em 1em;
+
+  &--container {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    padding-top: 122px;
+  }
+
+  .#{$namespace}product__info {
+    display: block;
+    padding: 1em 0;
+    text-align: center;
+
+    > span {
+      display: block;
+      padding: 1em 0;
+      margin-top: 35px;
+    }
+  }
+
+  .#{$namespace}product__price {
+    font-weight: bold;
+    color: #000;
+  }
+
+  .#{$namespace}product__title {
+    font-size: 150%;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 30px;
+  }
+
+  .#{$namespace}product__add {
+    color: #000;
+    position: absolute;
+    top: 10px;
+    right: 5px;;
+
+    &--invisible {
+      position: absolute;
+      top: 100%;
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+}
+
+.check-hidden {
+  position: absolute;
+  opacity: 0;
+}

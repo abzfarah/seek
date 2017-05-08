@@ -28,29 +28,33 @@ class CustomerPanel extends React.Component {
     return (
       <div className="list">
         <Button index={this.props.currentCustomer}
+                customer={true}
                 onClick={()=>this.props.action(0)}
                 className={buttonClass}
                 label='Default'/>
 
         <Button index={this.props.currentCustomer}
+                customer={true}
                 onClick={()=>this.props.action(1)}
-                className={buttonClass}
-                label='Nike'/>
-
-        <Button index={this.props.currentCustomer}
-                onClick={()=>this.props.action(2)}
                 className={buttonClass}
                 label='Unilever'/>
 
         <Button index={this.props.currentCustomer}
-                onClick={()=>this.props.action(3)}
-                className={buttonClass}
-                label='Ford'/>
-
-        <Button index={this.props.currentCustomer}
-                onClick={()=>this.props.action(4)}
+                customer={true}
+                onClick={()=>this.props.action(2)}
                 className={buttonClass}
                 label='Apple'/>
+
+        <Button index={this.props.currentCustomer}
+                customer={true}
+                onClick={()=>this.props.action(3)}
+                className={buttonClass}
+                label='Nike'/>
+        <Button index={this.props.currentCustomer}
+                customer={true}
+                onClick={()=>this.props.action(4)}
+                className={buttonClass}
+                label='Ford'/>
       </div>
     );
   }

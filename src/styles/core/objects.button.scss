@@ -186,7 +186,6 @@ $button-horizontal-padding:
       &:focus {
         background: #aaa;
         -webkit-transform-origin: 50% 100%;
-        -webkit-transform: rotateX(-90deg) translateY(100%);
       }
       &:after {
         top: -98%; /* should be -100% but there's a gap in Chrome Version 34.0.1847.131 */
