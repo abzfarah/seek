@@ -158,6 +158,26 @@ class AppContainer extends React.Component {
             />
           </div>
 
+          <div>
+            Cart Summary:
+
+            Current Customer: {CUSTOMER_ENUM[currentCustomer]}
+
+            <div>Classic Ads Quantity: {cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].quantity}</div>
+            <div>Classic Ads Bonus: {cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].bonus}</div>
+            <div>Classic Ads Price: {cart[PRODUCT_ENUM[PRODUCT.CLASSIC]].price}</div>
+            <br/>
+            <div>Standout Ads Quantity: {cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].quantity}</div>
+            <div>Standout Ads Bonus: {cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].bonus}</div>
+            <div>Standout Ads Price: {cart[PRODUCT_ENUM[PRODUCT.STANDOUT]].price}</div>
+            <br/>
+            <div>Premium Ads Quantity: {cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].quantity}</div>
+            <div>Premium Ads Bonus: {cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].bonus}</div>
+            <div>Premium Ads Price: {cart[PRODUCT_ENUM[PRODUCT.PREMIUM]].price}</div>
+            <br/>
+            Total: {cart.total}
+          </div>
+
         </div>
     )
   }
