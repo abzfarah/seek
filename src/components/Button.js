@@ -88,21 +88,23 @@ export default class Button extends Component {
 
 
     const classes = classnames(
-      CLASS_ROOT,
-      {
-        [`${CLASS_ROOT}--focus`]: this.state.focus,
-        [`${CLASS_ROOT}--customer`]: customer,
-        [`${CLASS_ROOT}--cart`]: cart,
-        [`${CLASS_ROOT}--customer--default`]: this.props.index == 0 ? true : false,
-        [`${CLASS_ROOT}--customer--unilever`]: this.props.index == 1 ? true : false,
-        [`${CLASS_ROOT}--customer--apple`]: this.props.index == 2 ? true : false,
-        [`${CLASS_ROOT}--customer--nike`]: this.props.index == 3 ? true : false,
-        [`${CLASS_ROOT}--customer--ford`]: this.props.index == 4 ? true : false,
+           CLASS_ROOT,
+            {
+              [`${CLASS_ROOT}--focus`]: this.state.focus,
+              [`${CLASS_ROOT}--customer`]: customer,
+              [`${CLASS_ROOT}--cart`]: cart,
+              [`${CLASS_ROOT}--customer--default`]: this.props.index == 0 ? true : false,
+              [`${CLASS_ROOT}--customer--unilever`]: this.props.index == 1 ? true : false,
+              [`${CLASS_ROOT}--customer--apple`]: this.props.index == 2 ? true : false,
+              [`${CLASS_ROOT}--customer--nike`]: this.props.index == 3 ? true : false,
+              [`${CLASS_ROOT}--customer--ford`]: this.props.index == 4 ? true : false,
 
 
-      },
+                },
+
       className
-    );
+  );
+
 
     return (
       <button

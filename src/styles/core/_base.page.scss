@@ -19,7 +19,7 @@
 
   font-size: ($inuit-base-font-size / 16px) * 1em;
   line-height: $inuit-base-line-height / $inuit-base-font-size;
-  background-color: #0e83cd;
+  background-color: #f17c72;
   color: $text-color;
   // overflow-y: scroll; // [2]
   // min-height: 100%;   // [3]
@@ -65,6 +65,7 @@
 
   * {
     box-sizing: inherit;
+    list-style-type: none;
   }
 
 

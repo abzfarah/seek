@@ -1,7 +1,8 @@
 .seek {
   @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
-
+  color: white;
   h1:not(.#{$namespace}heading) {
+    color: white;
     @include h1();
   }
 
@@ -14,7 +15,9 @@
   }
 
   h4:not(.#{$namespace}heading) {
+    color: white !important;
     @include h4();
+    color: white !important;
   }
 
   h5:not(.#{$namespace}heading) {

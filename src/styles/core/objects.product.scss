@@ -15,7 +15,7 @@
   /* min-width: 6em; */
   padding: 3.5em 1.5em 2em;
   /* padding: 54px; */
-  background: rgb(232, 232, 232);
+  background: #32ac97;
   border-radius: 5px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
@@ -41,7 +41,7 @@
 
   .#{$namespace}product__price {
     font-weight: bold;
-    color: #000;
+    color: white !important;
   }
 
   .#{$namespace}product__title {
@@ -49,6 +49,7 @@
     text-align: center;
     margin-bottom: 0px;
     margin-top: 30px;
+    color: white !important;
   }
 
   .#{$namespace}product__add {

@@ -5,19 +5,14 @@ $button-horizontal-padding:
 
 @mixin basic-button {
 
-  background-color: transparent;
-  border-radius: 2px;
-  color: $button-text-color;
-  @include inuit-font-size($control-font-size, $inuit-base-spacing-unit);
-  font-weight: $control-font-weight;
-  cursor: pointer;
-  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  color: white;
+  border: 0;
+  border-radius: 3px;
   outline: none;
-  max-width: $button-max-width;
 
-  @include media-query(lap-and-up) {
-    transition: 0.1s ease-in-out;
-  }
 
 }
 
@@ -54,14 +49,35 @@ $button-horizontal-padding:
   }
 }
 
+
+
 .#{$namespace}button {
   @include basic-button();
 
-  &--focus {
-
-
+  &:hover {
+    background: #27ae60;
+    box-shadow: 0 5px 1px #145b32;
   }
-  &--close-cart {
+
+  &:active {
+    border-top: 5px solid white;
+    box-shadow: none;
+  }
+
+  &.view-cart {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &:active {
+      border-top: 5px solid #e67e22;
+    }
+  }
+
+  &--close {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -75,7 +91,9 @@ $button-horizontal-padding:
   }
 
   &--remove-item {
-    background: #e74c3c;
+    background: #e74c3c !important;
+    box-shadow: 0 5px 1px #a82315 !important;
+    width: 100%;
   }
 
   &--cart {
@@ -103,7 +121,8 @@ $button-horizontal-padding:
     background-color: transparent;
     color: rgba(0,0,0,.86);
     margin-top: 81px;
-
+    background: #2ecc71;
+    box-shadow: 0 5px 0 #27ae60;
 
 
     > span {
@@ -137,15 +156,18 @@ $button-horizontal-padding:
        transition: background-color .2s ease;
        text-transform: uppercase;
        letter-spacing: 1px;
-       background-color: transparent;
+
        color: rgba(0,0,0,.86);
        margin-top: 81px;
+        background: #2ecc71 !important;
+        box-shadow: 0 5px 0 #27ae60 !important;
 
        > span {
          margin-left: 1em;
          font-size: 13px !important;
          margin-top: 43px;
          margin-right: 7px;
+         color: white;
        }
 
      }
@@ -154,6 +176,7 @@ $button-horizontal-padding:
   &--customer {
     display: block;
     background: #5cbcf6;
+    background: #0091F8 !important;
     outline: 1px solid transparent; /* FF jagged edges fix */
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
@@ -176,9 +199,7 @@ $button-horizontal-padding:
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
-
-    background-color: rgb(232, 232, 232) !important;
-    color: #999;
+    color: white !important;
 
     &:after {
       content: '';
@@ -338,4 +359,5 @@ $button-horizontal-padding:
 
 .fa {
   padding: 7px;
+  color: white
 }

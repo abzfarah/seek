@@ -50,7 +50,8 @@ class AppContainer extends React.Component {
   // This method will be sent to the child component
   changeCustomer(index) {
     this.setState({
-      currentCustomer: index
+      currentCustomer: index,
+      cartVisible: false
     });
 
     this._resetCart()
@@ -199,7 +200,7 @@ class AppContainer extends React.Component {
             <div>Premium Ads Bonus: {cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].bonus}</div>
             <div>Premium Ads Price: {cart.products[PRODUCT_ENUM[PRODUCT.PREMIUM]].price}</div>
             <br/>
-            Total: {cart.products.total}
+            Total: {cart.total}
           </div>
 
         </div>

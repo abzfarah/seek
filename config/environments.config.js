@@ -4,7 +4,7 @@ module.exports = {
   // ======================================================
 
   development : (config) => ({
-    compiler_public_path : `https://${config.server_host}:${config.server_port}/`
+    compiler_public_path : `http://${config.server_host}:${config.server_port}/`
   }),
 
   // ======================================================
